@@ -1,0 +1,77 @@
+name: Android CI - Build APK
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      # Provisions a `gradle` command directly, so the repo doesn't need to
+      # ship the gradle-wrapper.jar binary. If you generate a wrapper locally
+      # later (`gradle wrapper --gradle-version 8.7`) you can switch these
+      # steps back to `./gradlew ...` instead.
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      # These come from: Repo -> Settings -> Secrets and variables -> Actions -> New repository secret.
+      # Only the ANON/PUBLISHABLE key belongs here. NEVER add SUPABASE_SECRET_KEY as a
+      # build secret for the Android app — it must only be used by the Edge Function.
+      - name: Build debug APK
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+        run: gradle assembleDebug --stacktrace
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mydocx-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+
+  release_build:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Build release APK (unsigned)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
+        run: gradle assembleRelease --stacktrace
+
+      - name: Upload release APK artifact (unsigned)
+        uses: actions/upload-artifact@v4
+        with:
+          name: mydocx-release-apk-unsigned
+          path: app/build/outputs/apk/release/app-release-unsigned.apk
