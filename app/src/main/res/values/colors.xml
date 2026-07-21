@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand core -->
+    <color name="ink_900">#0E1620</color>
+    <color name="ink_800">#151F2C</color>
+    <color name="ink_700">#1D2A3A</color>
+    <color name="ink_600">#2A3B50</color>
+    <color name="paper_50">#F7F5F0</color>
+    <color name="paper_100">#EFEBE2</color>
+
+    <!-- Signature accent (the "red passkey" red) -->
+    <color name="signal_red">#E23B3B</color>
+    <color name="signal_red_dark">#B32B2B</color>
+    <color name="signal_red_soft">#F7D9D9</color>
+
+    <!-- Secondary accent (used for code / project badges) -->
+    <color name="gold_accent">#D9A441</color>
+
+    <!-- Status -->
+    <color name="success_green">#3BA776</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="text_primary">#151F2C</color>
+    <color name="text_secondary">#5B6B7C</color>
+    <color name="divider">#E3DED2</color>
