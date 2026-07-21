@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyDocx</string>
+    <string name="tagline">وثّق أفكارك وشارك مشاريعك</string>
+
+    <!-- Auth -->
+    <string name="login">تسجيل الدخول</string>
+    <string name="register">إنشاء حساب</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="password">كلمة السر</string>
+    <string name="confirm_password">تأكيد كلمة السر</string>
+    <string name="create_account">إنشاء الحساب</string>
+    <string name="have_account">لديك حساب؟ سجّل الدخول</string>
+    <string name="no_account">ليس لديك حساب؟ أنشئ واحدًا</string>
+    <string name="red_passkey_title">مفتاح المرور الأحمر 🔴</string>
+    <string name="red_passkey_desc">أدخل رمز الأمان المكوّن من 4 أرقام للمتابعة</string>
+    <string name="red_passkey_setup_desc">اختر رمز أمان إضافي من 4 أرقام لحماية حسابك عند كل تسجيل دخول</string>
+    <string name="confirm_pin">تأكيد الرمز</string>
+    <string name="continue_text">متابعة</string>
+
+    <!-- Feed / Publish -->
+    <string name="home">الرئيسية</string>
+    <string name="explore">استكشاف</string>
+    <string name="publish">نشر</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="profile">حسابي</string>
+    <string name="publish_article">مقالة جديدة</string>
+    <string name="publish_project">مشروع برمجي جديد</string>
+    <string name="article_title_hint">عنوان المقالة</string>
+    <string name="article_body_hint">اكتب محتوى المقالة هنا…</string>
+    <string name="project_name_hint">اسم المشروع (مثال: MyProject.docx)</string>
+    <string name="project_desc_hint">وصف المشروع والتقنيات المستخدمة</string>
+    <string name="project_repo_hint">رابط المستودع (GitHub) — اختياري</string>
+    <string name="attach_files">إرفاق ملفات المشروع (هيكل مجلدات)</string>
+
+    <!-- Reactions -->
+    <string name="like">إعجاب</string>
+    <string name="repost">إعادة نشر</string>
+    <string name="report">إبلاغ</string>
+    <string name="follow">متابعة</string>
+    <string name="following">متابَع</string>
+    <string name="report_reason_title">سبب الإبلاغ</string>
+    <string name="download_structured">تحميل هيكلي</string>
+    <string name="translate">ترجمة</string>
+
+    <!-- Profile -->
+    <string name="about">لمحة عني</string>
+    <string name="followers">المتابعون</string>
+    <string name="followed">أتابعهم</string>
+    <string name="special_thanks">شكر خاص</string>
+    <string name="social_links">روابط التواصل</string>
+    <string name="reposts_section">إعادة النشر</string>
+    <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="upload_avatar">تغيير الصورة الرمزية</string>
+    <string name="download_avatar">تحميل الأيقونة</string>
+    <string name="monthly_subscription">اشتراك شهري بالبريد الإلكتروني</string>
+    <string name="subscribe_email_hint">بريدك الإلكتروني</string>
+    <string name="subscribe">اشترك</string>
+</resources>
