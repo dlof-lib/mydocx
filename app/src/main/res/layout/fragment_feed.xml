@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/paper_50">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/ink_900"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/app_name"
+            android:textColor="@color/paper_50"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:singleSelection="true"
+        app:selectionRequired="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabArticles"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:text="@string/publish_article" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTabProjects"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:text="@string/publish_project" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFeed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="16dp" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>
